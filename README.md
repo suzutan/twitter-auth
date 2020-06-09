@@ -14,4 +14,4 @@ Twitter app needs proper redirect_url set.
 
 1. Access URL of <http://localhost:8080/>
 1. authenticate twitter account
-1. view consumer_key,consumer_secret, access_token andaccess_token_secret
+1. show consumer_key, consumer_secret, access_token and access_token_secret from browser.
