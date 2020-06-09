@@ -1,8 +1,8 @@
 # twitter-auth
 
-twitter auth するやつ
+server for twitter oauth.
 
-twitter app は適当な redirect_url を設定しておく必要があります
+Twitter app needs proper redirect_url set.
 
 ## use
 
