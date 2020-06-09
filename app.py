@@ -9,7 +9,6 @@ parser = argparse.ArgumentParser(description='twitter auth client.')
 parser.add_argument('ck', help='twitter consumer key', type=str, )
 parser.add_argument('cs', help='twitter consumer secret', type=str, )
 parser.add_argument('--port', help='listen port', default=8080, type=int)
-
 args = parser.parse_args()
 
 if args.ck is None or args.cs is None:
@@ -50,7 +49,7 @@ def callback():
 
     try:
         auth.get_access_token(oauth_verifier)
-        a = f"""
+        return f"""
 <pre>
 ck: {args.ck}
 cs: {args.cs}
@@ -59,9 +58,9 @@ ats: {auth.access_token_secret}
 </pre>
 """
     except tweepy.TweepError:
-        print("Error! Failed to get access token.")
-    shutdown_server()
-    return a
+        return "Error! Failed to get access token."
+    finally:
+        shutdown_server()
 
 
 app.run(host="0.0.0.0", port=args.port)
